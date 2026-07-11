@@ -1,37 +1,50 @@
-# HSE Website
+# Mohsin Hussain — Portfolio
 
-Repository for the HSE (Health, Safety & Environment) website.
+An animated personal portfolio for **Mohsin Hussain**, a Digital Marketing
+Strategist with an IT background and deep expertise in performance marketing,
+UGC ads, paid social and growth.
 
-Planned stack: **Next.js + React**.
+## Stack
 
-## UI/UX Pro Max skill
+Zero-dependency static site — pure **HTML, CSS & vanilla JS**. Just open
+`index.html`; there is no build step.
 
-This repo has the [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
-design-intelligence skill installed under `.claude/skills/`. It provides
-searchable databases of UI styles, color palettes, font pairings, UX
-guidelines, and chart types to guide design decisions when building the site.
-
-### Using the skill
-
-Claude Code discovers the skill automatically. You can also query the
-databases directly:
-
-```bash
-# Color palettes for a product type
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "safety consultancy website" --domain color
-
-# UI styles (with AI prompts + CSS keywords)
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "corporate trustworthy" --domain style
-
-# Font pairings
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "professional" --domain typography
-
-# Stack-specific guidelines
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "hero section" --stack nextjs
+```
+index.html    # markup & content
+styles.css    # cinematic dark theme + all keyframe animations
+script.js     # cursor, scroll reveals, counters, tilt, magnetic buttons…
 ```
 
-Available domains: `product`, `style`, `typography`, `color`, `landing`,
-`chart`, `ux`, `gsap`. Requires Python 3 (no external dependencies).
+## Features / animations
 
-Companion skills also installed: `design-system`, `brand`, `design`,
-`slides`, `ui-styling`, `banner-design`.
+- Animated preloader with letter-by-letter name reveal
+- Custom trailing cursor (with hover-grow states)
+- Kinetic gradient hero typography with word-by-word entrance
+- Scroll progress bar + sticky glass nav with active-section tracking
+- Animated gradient blob background, grid + noise overlay
+- Scroll-reveal (IntersectionObserver), animated counters & skill bars
+- Magnetic buttons, 3D card tilt with cursor-tracked glow, marquee ticker
+- Fully responsive with a mobile slide-in menu
+- Respects `prefers-reduced-motion` and degrades gracefully without JS
+
+## Local preview
+
+```bash
+# any static server works, e.g.
+python3 -m http.server 8000
+# then open http://localhost:8000
+```
+
+## Customising
+
+- **Content**: edit the sections in `index.html` (about, expertise, work, etc.).
+- **Contact form**: currently opens the visitor's mail client via `mailto:`.
+  Swap the handler in `script.js` for a form endpoint (Formspree, Getform, an
+  API route) when a backend is available. Update the email/social links too.
+- **Colors & fonts**: tweak the CSS custom properties at the top of `styles.css`.
+
+## Design intelligence
+
+Built with guidance from the [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+skill installed under `.claude/skills/` (kinetic typography + cinematic dark
+direction, GSAP-style scroll-reveal timing).
